@@ -30,6 +30,7 @@ function App() {
   }
 
   const handleReset = ()=>{
+    setError(false)
     setCurrent("BLUE")
     setNext("BLUE")
   }

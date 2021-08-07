@@ -1,5 +1,4 @@
-import React,{useState,useEffect} from 'react';
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -11,6 +10,7 @@ import Col from 'react-bootstrap/Col';
 // components 
 import ButtonComponent from './components/button/ButtonComponent'
 import ModalComponent from './components/modal/ModalComponent'
+import TextureComponent from './components/texture/TextureComponent'
 
 type IAction = {
   action: boolean;
@@ -20,6 +20,7 @@ function App() {
   const [next,setNext]=useState("BLUE")
   const [current,setCurrent]=useState("BLUE")
   const [error,setError]=useState(false)
+  const [path,setPath]=useState(["BLUE"])
 
   const handleClick = (value:string)=>{
     if((next==="GREEN" && value==="YELLOW")||(next==="YELLOW" && value==="GREEN")||(current===value&& value!=="BLUE")){
@@ -27,16 +28,18 @@ function App() {
     }
     setCurrent(next)
     setNext(value)
+    setPath([...path,value])
   }
-
   const handleReset = ()=>{
     setError(false)
     setCurrent("BLUE")
+    setPath(["BLUE"])
     setNext("BLUE")
   }
 
   const handleModal = (value:boolean)=>{
     if(!value){
+      setPath(["BLUE"])
       setError(false)
       setCurrent("BLUE")
       setNext("BLUE")
@@ -58,6 +61,12 @@ function App() {
           <Row>
               <Col></Col>
               <Col style={{textAlign:"center"}}><ButtonComponent actionColor={next==="YELLOW"?true:false} onClick={()=>handleClick("YELLOW")} text="Yellow" variant="warning"/></Col>
+              <Col></Col>
+          </Row>
+          <h4 className="text-center mt-5">Result</h4>
+          <Row className="mt-2">
+              <Col></Col>
+              <Col><TextureComponent path={path}/></Col>
               <Col></Col>
           </Row>
           <ModalComponent handleModal={handleModal} error={error}/>

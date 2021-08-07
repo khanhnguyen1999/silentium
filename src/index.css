@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.chips {
+  margin-top:10px;
+  background-color: #27ae60;
+  color:antiquewhite;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 5px;
+}

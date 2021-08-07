@@ -44,3 +44,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## How to use
+
+- We have 4 buttons in all, 3 buttons show the corresponding color and 1 button reset the path.
+- The red circle shows where we are standing
+- In addition, we also have the results showing the path.
+- starting from blue, when we click on another color if the condition is right, the path will still work, if we are wrong, it will show a message and reset the path.

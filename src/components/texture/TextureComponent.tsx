@@ -1,11 +1,12 @@
 import React from 'react'
+import { ArrowRight } from 'react-bootstrap-icons';
 
 type IContext = {
-    context?:string
+    path?:any
 }
-const TextureComponent = ({context}:IContext)=>{
+const TextureComponent = ({path}:IContext)=>{
     return (
-        <div>{context}</div>
+        <div>{path.map((item:string,index:number)=>(<a>{index>0?<ArrowRight/>:""}<span className="chips">{item}</span></a>))}</div>
     )
 }
 export default TextureComponent

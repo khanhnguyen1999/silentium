@@ -29,12 +29,8 @@ const ModalComponent = ({error,handleModal}:IError)=>{
           keyboard={false}
         >
           <Modal.Header closeButton>
-            <Modal.Title>Modal title</Modal.Title>
+            <Modal.Title>Wrong path</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            I will not close if you click outside me. Don't even try to press
-            escape key.
-          </Modal.Body>
           <Modal.Footer>
             <ButtonComponent typeButton={true} variant="secondary" onClick={handleClose} text="Close"/>
           </Modal.Footer>

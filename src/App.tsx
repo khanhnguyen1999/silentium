@@ -39,10 +39,7 @@ function App() {
 
   const handleModal = (value:boolean)=>{
     if(!value){
-      setPath(["BLUE"])
-      setError(false)
-      setCurrent("BLUE")
-      setNext("BLUE")
+      handleReset()
     }
   }
   return (

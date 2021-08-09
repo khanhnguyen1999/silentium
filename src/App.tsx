@@ -12,10 +12,6 @@ import ButtonComponent from './components/button/ButtonComponent'
 import ModalComponent from './components/modal/ModalComponent'
 import TextureComponent from './components/texture/TextureComponent'
 
-type IAction = {
-  action: boolean;
-}
-
 function App() {
   const [next,setNext]=useState("BLUE")
   const [current,setCurrent]=useState("BLUE")
